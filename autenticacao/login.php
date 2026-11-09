@@ -28,13 +28,15 @@ if (!$usuario || !password_verify($senha, $usuario['senha_hash'])) {
     echo json_encode(['erro' => 'E-mail ou senha inválidos.']);
     exit;
 }
-
-session_regenerate_id(true);
 $_SESSION['usuario'] = [
     'id'     => (int) $usuario['id'],
     'nome'   => $usuario['nome'],
     'perfil' => $usuario['perfil']
 ];
+// Formato que a API da Pessoa 2 espera:
+$_SESSION['usuario_id'] = (int) $usuario['id'];
+$_SESSION['nome']       = $usuario['nome'];
+$_SESSION['perfil']     = $usuario['perfil'];
 
 echo json_encode([
     'mensagem' => 'Login realizado com sucesso!',

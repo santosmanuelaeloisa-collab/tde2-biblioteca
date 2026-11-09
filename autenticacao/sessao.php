@@ -9,6 +9,8 @@ if (empty($_SESSION['usuario'])) {
 }
 
 echo json_encode([
-    'logado'  => true,
-    'usuario' => $_SESSION['usuario']
+    'mensagem' => 'Sessão ativa.',
+    'dados'    => $_SESSION['usuario'],
+    'logado'   => true,
+    'usuario'  => $_SESSION['usuario']
 ]);
