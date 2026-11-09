@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usuários — Biblioteca</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo" id="topo"></header>
+
+  <main>
+    <div id="mensagem" class="mensagem" role="alert" hidden></div>
+
+    <section class="card" id="card-form" hidden>
+      <h2>Editar usuário</h2>
+      <form id="form-usuario" novalidate>
+        <input type="hidden" id="usuario-id">
+        <div class="grade-form">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" required maxlength="100">
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" required maxlength="150">
+          </div>
+          <div class="campo">
+            <label for="perfil">Perfil</label>
+            <select id="perfil" required>
+              <option value="membro">Membro</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </div>
+        </div>
+        <div class="acoes-form">
+          <button type="submit" class="btn" id="btn-salvar">Salvar</button>
+          <button type="button" class="btn btn-sec" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Usuários cadastrados</h2>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Cadastro</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/usuarios.js"></script>
+</body>
+</html>

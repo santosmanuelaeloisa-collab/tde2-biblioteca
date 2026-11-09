@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meus empréstimos — Biblioteca</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo" id="topo"></header>
+
+  <main>
+    <div id="mensagem" class="mensagem" role="alert" hidden></div>
+
+    <section class="card">
+      <h2>Meus empréstimos</h2>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr><th>Livro</th><th>Autor</th><th>Emprestado em</th><th>Devolvido em</th><th>Status</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+      <p><small>Para pegar um livro, vá em <a href="livros.html">Livros</a> e clique em "Emprestar".</small></p>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/emprestimos.js"></script>
+</body>
+</html>

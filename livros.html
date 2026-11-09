@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livros — Biblioteca</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo" id="topo"></header>
+
+  <main>
+    <div id="mensagem" class="mensagem" role="alert" hidden></div>
+
+    <!-- Só aparece para administrador (o JS remove o hidden) -->
+    <section class="card" id="card-form" hidden>
+      <h2 id="titulo-form">Novo livro</h2>
+      <form id="form-livro" novalidate>
+        <input type="hidden" id="livro-id">
+        <div class="grade-form">
+          <div class="campo">
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" required maxlength="150">
+          </div>
+          <div class="campo">
+            <label for="autor">Autor</label>
+            <input type="text" id="autor" required maxlength="100">
+          </div>
+          <div class="campo">
+            <label for="ano">Ano de publicação (opcional)</label>
+            <input type="number" id="ano" min="1">
+          </div>
+        </div>
+        <div class="acoes-form">
+          <button type="submit" class="btn" id="btn-salvar">Salvar</button>
+          <button type="button" class="btn btn-sec" id="btn-cancelar" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="barra-lista">
+        <h2 style="margin:0">Acervo</h2>
+        <input type="search" id="busca" placeholder="Buscar por título ou autor">
+      </div>
+      <div class="tabela-wrap">
+        <table>
+          <thead>
+            <tr><th>Título</th><th>Autor</th><th>Ano</th><th>Situação</th><th>Ações</th></tr>
+          </thead>
+          <tbody id="lista"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/livros.js"></script>
+</body>
+</html>
