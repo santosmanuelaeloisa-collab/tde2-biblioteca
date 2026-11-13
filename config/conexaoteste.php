@@ -4,7 +4,7 @@ $host  = '127.0.0.1';
 $porta = 3306;
 $banco = 'biblioteca_comunitaria';
 $user  = 'root';
-$senha = 'COLOQUE_SUA_SENHA_AQUI';
+$senha = ' Man-u##1609';
 
 try {
     $pdo = new PDO(
