@@ -1,7 +1,7 @@
 :root {
-  --cor-primaria: #4f46e5;
-  --cor-primaria-escura: #3730a3;
-  --cor-fundo: #f3f4f6;
+  --cor-primaria: #e0709b;
+  --cor-primaria-escura: #c85582;
+  --cor-fundo: #fdf2f6;
   --cor-card: #ffffff;
   --cor-texto: #1f2937;
   --cor-borda: #d1d5db;
@@ -106,7 +106,8 @@ table { width: 100%; border-collapse: collapse; }
 th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--cor-borda); font-size: .93rem; }
 th { background: #f9fafb; }
 tbody tr:hover { background: #f9fafb; }
-td.acoes { white-space: nowrap; display: flex; gap: .4rem; }
+td.acoes { white-space: nowrap; }
+td.acoes .btn + .btn { margin-left: .4rem; }
 .vazio { text-align: center; color: #6b7280; padding: 1.5rem; }
 
 /* Selos de status (aberto = amarelo, devolvido/disponível = verde) */
