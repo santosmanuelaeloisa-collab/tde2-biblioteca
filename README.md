@@ -18,10 +18,28 @@ persistidos em MySQL.
 ## Instalação e execução (passo a passo)
 1. Extraia o ZIP e copie a pasta do projeto para dentro de htdocs
    (ex.: C:\xampp\htdocs\tde2-biblioteca).
-2. Abra o painel do XAMPP e inicie *Apache* e *MySQL*.
-3. Acesse http://localhost/phpmyadmin, vá na aba *Importar*, escolha o arquivo
-   sql/schema.sql e clique em *Importar*. Isso cria o banco
-   biblioteca_comunitaria, as tabelas e 30 livros de exemplo.
+2. Abra o painel do XAMPP e inicie o *Apache. Inicie também o **MySQL*, se for
+   usar o MySQL do XAMPP (opção A do passo 3).
+3. Crie o banco executando o arquivo sql/schema.sql *uma única vez*, num banco vazio.
+   Escolha uma das opções:
+   - *Opção A (MySQL do XAMPP, padrão):* acesse http://localhost/phpmyadmin, vá na
+     aba Importar, escolha sql/schema.sql e clique em Importar.
+   - *Opção B (MySQL Workbench ou MySQL instalado separadamente):* no Workbench, use
+     File > Open SQL Script, escolha sql/schema.sql e clique no ícone de raio.
+     Nesse caso o MySQL do XAMPP pode ficar desligado, pois os dois usam a porta 3306.
+4. Configure a conexão. Se o arquivo config/conexao.php não existir, copie
+   config/conexao.exemplo.php para config/conexao.php na mesma pasta e ajuste
+   a variável $senha:
+   - Opção A (XAMPP): deixe a senha vazia, $senha = '';
+   - Opção B (Workbench): coloque a senha do seu MySQL.
+5. Abra no navegador: http://localhost/tde2-biblioteca/login.html
+   (use o nome real da pasta que você colocou em htdocs).
+
+### Problemas comuns
+- *"Resposta inválida do servidor" ou "Erro de conexão ... Access denied":* a senha em
+  config/conexao.php está errada, ou o arquivo não existe.
+- *"Unknown database":* o sql/schema.sql ainda não foi executado.
+- *"Not Found":* o nome da pasta na URL não bate com o nome da pasta em htdocs.
 4. Confira o arquivo config/conexao.php. O padrão do XAMPP já vem configurado:
    host 127.0.0.1, porta 3306, usuário root, *senha vazia*.
    Se o seu MySQL tiver senha, altere a variável $senha.
